@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Provider/AuthProvider';
 
 const NavBar = () => {
+    const {user,logOut} = useContext(AuthContext);
+    const handleLogOut = () =>{
+        logOut()
+        .then(()=>{})
+        .catch(error =>console.log(error))
+
+
+    }
     return (
         <div className="navbar bg-base-100 h-28 mb-4 ">
             <div className="navbar-start">
@@ -12,9 +21,12 @@ const NavBar = () => {
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
 
                         <li><Link to='/'>Home</Link></li>
-                        <li><Link to='/about'>About</Link></li>
+                        <li><Link to='/alltoys'>All Toys</Link></li>
+                        <li><Link to='/mytoys'>My Toys</Link></li>
+                        <li><Link to='/addtoy'>Add A Toy</Link></li>
                         <li><Link to='/blog'>Blog</Link></li>
-                        <li><Link to='/login'>Login</Link></li>
+                        { user?.email ? <li><button onClick={handleLogOut}>Log Out</button></li>: <li><Link to='/login'>Login</Link></li>
+                        }
 
                     </ul>
                 </div>
@@ -23,9 +35,12 @@ const NavBar = () => {
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     <li><Link to='/'>Home</Link></li>
-                    <li><Link to='/about'>About</Link></li>
+                    <li><Link to='/alltoys'>All Toys</Link></li>
+                    <li><Link to='/mytoys'>My Toys</Link></li>
+                    <li><Link to='/addtoy'>Add A Toy</Link></li>
                     <li><Link to='/blog'>Blog</Link></li>
-                    <li><Link to='/login'>Login</Link></li>
+                    { user?.email ? <li><button onClick={handleLogOut}>Log Out</button></li>: <li><Link to='/login'>Login</Link></li>
+                        }
 
                 </ul>
             </div>
