@@ -19,9 +19,11 @@ const Login = () => {
         .then(result =>{
             const user = result.user;
             console.log(user);
+            alert('Login SuccessFully');
         })
         .catch(error => console.log(error));
     }
+    
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row">

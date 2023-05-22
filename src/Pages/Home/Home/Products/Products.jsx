@@ -1,15 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import ProductCard from './ProductCard';
+import { AuthContext } from '../../../../Provider/AuthProvider';
 
 const Products = () => {
     const [product,setProduct] = useState([]);
+    const {Loading} = useContext(AuthContext);
+
+   
 
     useEffect(()=>{
         fetch('http://localhost:5000/products')
         .then(res =>res.json())
         .then(data =>setProduct(data))
 
-    },[])
+    },[]);
+    if(Loading){
+        return <progress className="progress w-56"></progress>
+    }
+    
     return (
         <div className='mt-4'>
             <div className='text-center'>

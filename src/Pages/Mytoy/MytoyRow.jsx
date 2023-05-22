@@ -1,15 +1,13 @@
 import React from 'react';
 
-const MytoyRow = ({item}) => {
+const MytoyRow = ({item,handleDelete}) => {
+
     const {_id,image,title,price,postedBy} = item;
+   
 
     return (
         <tr>
-            <th>
-                <label>
-                    <input type="checkbox" className="checkbox" />
-                </label>
-            </th>
+           
             <td>
                 <div className="flex items-center space-x-3">
                     <div className="avatar">
@@ -37,7 +35,7 @@ const MytoyRow = ({item}) => {
                 <button className="btn btn-ghost btn-xs">Edit</button>
             </th>
             <th>
-                <button className="btn btn-ghost btn-xs">Delete</button>
+                <button onClick={()=>handleDelete(_id)} className="btn btn-ghost btn-xs">Delete</button>
             </th>
         </tr>
     );

@@ -1,9 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import AlltoysCart from './AlltoysCart';
+import { AuthContext } from '../../Provider/AuthProvider';
+
 
 const Alltoys = () => {
+    
     const [product, setProduct] = useState([]);
     const [searchText, setSearchText] = useState("");
+    const {Loading} = useContext(AuthContext);
+
+  
 
     useEffect(() => {
         fetch('http://localhost:5000/products')
@@ -11,6 +17,9 @@ const Alltoys = () => {
             .then(data => setProduct(data))
 
     }, []);
+    if(Loading){
+        return <progress className="progress w-56"></progress>
+    }
 
     const handleSearch = () => {
         
@@ -22,6 +31,7 @@ const Alltoys = () => {
 
         
     };
+  
 
     return (
 

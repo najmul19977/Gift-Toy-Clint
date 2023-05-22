@@ -20,20 +20,24 @@ const Addtoy = () => {
         })
 
         console.log(data);
+        alert('Add New Toy Successfully');
 
     }; 
     return (
-        <div>
+        <div className='text-center m-10'>
+            <div className='text-center'>
+                <h2 className='text-3xl mb-10'><u>Add New Toy</u></h2>
+            </div>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input className='text-input' /* defaultValue="Toy Name" */ {...register("title")} placeholder='Toy Name' /> <br />
-                <input className='text-input' /* defaultValue="Toy Price" */ {...register("price")} placeholder='Toy Price' /> <br />
-                <input className='text-input' /* defaultValue="Toy Price" */ {...register("image")} placeholder='image URL' /> <br />
-                <input className='text-input' /* defaultValue="Toy Price" */ {...register("description")} placeholder='Description' /> <br />
-                <input className='text-input' defaultValue="email" /* defaultValue="Toy Price" */ {...register("postedBy")} placeholder='Posted By' /> <br />
+                <input className='text-input border border-gray-300 text-gray-900 text-sm  w-50 p-2.5 m-2' /* defaultValue="Toy Name" */ {...register("title")} placeholder='Toy Name' /> <br />
+                <input className='text-input  border border-gray-300 text-gray-900 text-sm  w-50 p-2.5 m-2' /* defaultValue="Toy Price" */ {...register("price")} placeholder='Toy Price' /> <br />
+                <input className='text-input  border border-gray-300 text-gray-900 text-sm  w-50 p-2.5 m-2' /* defaultValue="Toy Price" */ {...register("image")} placeholder='image URL' /> <br />
+                <input className='text-input  border border-gray-300 text-gray-900 text-sm  w-50 p-2.5 m-2' /* defaultValue="Toy Price" */ {...register("description")} placeholder='Description' /> <br />
+                <input className='text-input  border border-gray-300 text-gray-900 text-sm  w-50 p-2.5 m-2'  /* defaultValue="Toy Price" */ {...register("postedBy")} placeholder='Posted By Email' /> <br />
                 
                 {errors.exampleRequired && <span>This field is required</span>}
 
-                <input type="submit" />
+                <input className='btn' type="submit" />
             </form>
         </div>
     );
