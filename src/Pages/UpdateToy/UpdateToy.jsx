@@ -1,9 +1,8 @@
-import { Result } from 'postcss';
 import React from 'react';
 import { useForm } from "react-hook-form";
+import Products from '../Home/Home/Products/Products';
 
-const Addtoy = () => {
-
+const UpdateToy = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data =>{
         fetch('http://localhost:5000/products',{
@@ -26,10 +25,10 @@ const Addtoy = () => {
     return (
         <div className='text-center m-10'>
             <div className='text-center'>
-                <h2 className='text-3xl mb-10'><u>Add New Toy</u></h2>
+                <h2 className='text-3xl mb-10'><u>Update Toy</u></h2>
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input className='text-input border border-gray-300 text-gray-900 text-sm  w-50 p-2.5 m-2' /* defaultValue="Toy Name" */ {...register("title")} placeholder='Toy Name' /> <br />
+                <input className='text-input border border-gray-300 text-gray-900 text-sm  w-50 p-2.5 m-2'  defaultValue="title"  {...register("title")} placeholder='Toy Name' /> <br />
                 <input className='text-input  border border-gray-300 text-gray-900 text-sm  w-50 p-2.5 m-2' /* defaultValue="Toy Price" */ {...register("price")} placeholder='Toy Price' /> <br />
                 <input className='text-input  border border-gray-300 text-gray-900 text-sm  w-50 p-2.5 m-2' /* defaultValue="Toy Price" */ {...register("image")} placeholder='image URL' /> <br />
                 <input className='text-input  border border-gray-300 text-gray-900 text-sm  w-50 p-2.5 m-2' /* defaultValue="Toy Price" */ {...register("description")} placeholder='Description' /> <br />
@@ -37,10 +36,10 @@ const Addtoy = () => {
                 
                 {errors.exampleRequired && <span>This field is required</span>}
 
-                <input className='btn' type="submit" value="Submit"/>
+                <input className='btn' type="submit" value="Update" />
             </form>
         </div>
     );
 };
 
-export default Addtoy;
+export default UpdateToy;
