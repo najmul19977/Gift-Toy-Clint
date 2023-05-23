@@ -31,7 +31,7 @@ const Addtoy = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input className='text-input border border-gray-300 text-gray-900 text-sm  w-50 p-2.5 m-2' /* defaultValue="Toy Name" */ {...register("title")} placeholder='Toy Name' /> <br />
                 <input className='text-input  border border-gray-300 text-gray-900 text-sm  w-50 p-2.5 m-2' /* defaultValue="Toy Price" */ {...register("price")} placeholder='Toy Price' /> <br />
-                <input className='text-input  border border-gray-300 text-gray-900 text-sm  w-50 p-2.5 m-2' /* defaultValue="Toy Price" */ {...register("image")} placeholder='image URL' /> <br />
+                <input className='text-input  border border-gray-300 text-gray-900 text-sm  w-50 p-2.5 m-2' /* defaultValue="Toy Price" */ {...register("img")} placeholder='image URL' /> <br />
                 <input className='text-input  border border-gray-300 text-gray-900 text-sm  w-50 p-2.5 m-2' /* defaultValue="Toy Price" */ {...register("description")} placeholder='Description' /> <br />
                 <input className='text-input  border border-gray-300 text-gray-900 text-sm  w-50 p-2.5 m-2'  /* defaultValue="Toy Price" */ {...register("postedBy")} placeholder='Posted By Email' /> <br />
                 

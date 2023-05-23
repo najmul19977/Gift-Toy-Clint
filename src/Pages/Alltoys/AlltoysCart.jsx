@@ -11,6 +11,7 @@ const AlltoysCart = ({produc}) => {
             <div className="card-body">
                 <h2 className="card-title">{title}</h2>
                 <p>Price:${price}</p>
+                
                
             </div>
         </div>
