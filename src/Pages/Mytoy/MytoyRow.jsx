@@ -33,7 +33,7 @@ const MytoyRow = ({item,handleDelete}) => {
             </td>
             
             <th>
-               <Link to={`updatetoy/${_id}`}> <button className="btn btn-ghost btn-xs">Edit</button></Link>
+               <Link to={`/updatetoy/${_id}`}> <button className="btn btn-ghost btn-xs">Edit</button></Link>
             </th>
             <th>
                 <button onClick={()=>handleDelete(_id)} className="btn btn-ghost btn-xs">Delete</button>
