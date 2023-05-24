@@ -2,10 +2,25 @@ import React, { useContext } from 'react';
 import login from '../../assets/image/login/Login.jpg'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
+import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import app from '../../firebase.confige';
 
 
 const Login = () => {
     const {signIn} = useContext(AuthContext);
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+    const handleGoogleSignIn =() =>{
+        signInWithPopup(auth,provider)
+        .then(result =>{
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error =>{
+            console.log(error);
+        })
+
+    }
     const handleLogin = event =>{
         event.preventDefault();
         const form = event.target;
@@ -52,6 +67,9 @@ const Login = () => {
                             <div className="form-control mt-6">
 
                                 <input className='btn btn-primary' type="submit" value="Login" />
+                            </div>
+                            <div className="form-control mt-6">
+                                <button className='btn btn-primary' onClick={handleGoogleSignIn}>Google Login</button>
                             </div>
                         </form>
                         <p>New to Toy Car?<Link className='text-orange-600 font-bold my-4' to='/signup'>Sign Up</Link></p>

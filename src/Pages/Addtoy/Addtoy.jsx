@@ -34,6 +34,7 @@ const Addtoy = () => {
                 <input className='text-input  border border-gray-300 text-gray-900 text-sm  w-50 p-2.5 m-2' /* defaultValue="Toy Price" */ {...register("img")} placeholder='image URL' /> <br />
                 <input className='text-input  border border-gray-300 text-gray-900 text-sm  w-50 p-2.5 m-2' /* defaultValue="Toy Price" */ {...register("description")} placeholder='Description' /> <br />
                 <input className='text-input  border border-gray-300 text-gray-900 text-sm  w-50 p-2.5 m-2'  /* defaultValue="Toy Price" */ {...register("postedBy")} placeholder='Posted By Email' /> <br />
+                <input className='text-input  border border-gray-300 text-gray-900 text-sm  w-50 p-2.5 m-2'  /* defaultValue="Toy Price" */ {...register("rating")} placeholder='Rating' /> <br />
                 
                 {errors.exampleRequired && <span>This field is required</span>}
 

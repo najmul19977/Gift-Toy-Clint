@@ -47,7 +47,7 @@ const UpdateToy = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input className='text-input border border-gray-300 text-gray-900 text-sm  w-50 p-2.5 m-2' defaultValue={toydata.title}   {...register("title")} placeholder='Toy Name' /> <br />
                 <input className='text-input  border border-gray-300 text-gray-900 text-sm  w-50 p-2.5 m-2' defaultValue={toydata.price}  {...register("price")} placeholder='Toy Price' /> <br />
-                <input className='text-input  border border-gray-300 text-gray-900 text-sm  w-50 p-2.5 m-2' defaultValue={toydata.image} {...register("image")} placeholder='image URL' /> <br />
+                <input className='text-input  border border-gray-300 text-gray-900 text-sm  w-50 p-2.5 m-2' defaultValue={toydata.img} {...register("img")} placeholder='image URL' /> <br />
                 <input className='text-input  border border-gray-300 text-gray-900 text-sm  w-50 p-2.5 m-2' defaultValue={toydata.description}  {...register("description")} placeholder='Description' /> <br />
                 <input className='text-input  border border-gray-300 text-gray-900 text-sm  w-50 p-2.5 m-2' defaultValue={toydata.postedBy}  {...register("postedBy")} placeholder='Posted By Email' /> <br />
                 
