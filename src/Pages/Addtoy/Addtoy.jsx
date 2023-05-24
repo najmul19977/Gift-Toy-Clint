@@ -1,8 +1,10 @@
 import { Result } from 'postcss';
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const Addtoy = () => {
+    const {user} = useContext(AuthContext);
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data =>{
@@ -33,7 +35,7 @@ const Addtoy = () => {
                 <input className='text-input  border border-gray-300 text-gray-900 text-sm  w-50 p-2.5 m-2' /* defaultValue="Toy Price" */ {...register("price")} placeholder='Toy Price' /> <br />
                 <input className='text-input  border border-gray-300 text-gray-900 text-sm  w-50 p-2.5 m-2' /* defaultValue="Toy Price" */ {...register("img")} placeholder='image URL' /> <br />
                 <input className='text-input  border border-gray-300 text-gray-900 text-sm  w-50 p-2.5 m-2' /* defaultValue="Toy Price" */ {...register("description")} placeholder='Description' /> <br />
-                <input className='text-input  border border-gray-300 text-gray-900 text-sm  w-50 p-2.5 m-2'  /* defaultValue="Toy Price" */ {...register("postedBy")} placeholder='Posted By Email' /> <br />
+                <input className='text-input  border border-gray-300 text-gray-900 text-sm  w-50 p-2.5 m-2'   defaultValue={user?.email}  {...register("postedBy")} placeholder='Posted By Email' /> <br />
                 <input className='text-input  border border-gray-300 text-gray-900 text-sm  w-50 p-2.5 m-2'  /* defaultValue="Toy Price" */ {...register("rating")} placeholder='Rating' /> <br />
                 
                 {errors.exampleRequired && <span>This field is required</span>}

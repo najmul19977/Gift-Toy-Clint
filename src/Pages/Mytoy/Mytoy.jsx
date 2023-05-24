@@ -4,6 +4,7 @@ import MytoyRow from './MytoyRow';
 
 const Mytoy = () => {
     const { user } = useContext(AuthContext);
+    console.log(user);
     const [items, setItems] = useState([]);
     /* const [products,setProducts]= useState([]); */
     
