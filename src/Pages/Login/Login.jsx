@@ -2,23 +2,21 @@ import React, { useContext } from 'react';
 import login from '../../assets/image/login/Login.jpg'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
-import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
-import app from '../../firebase.confige';
+
 
 
 const Login = () => {
-    const {signIn} = useContext(AuthContext);
-    const auth = getAuth(app);
-    const provider = new GoogleAuthProvider();
+    const {signIn,signInWithGoogle} = useContext(AuthContext);
+    
     const handleGoogleSignIn =() =>{
-        signInWithPopup(auth,provider)
-        .then(result =>{
-            const user = result.user;
-            console.log(user);
-        })
-        .catch(error =>{
-            console.log(error);
-        })
+       signInWithGoogle()
+       .then(result =>{
+        const loggedUser = result.user;
+        console.log(loggedUser);
+       })
+       .catch(error =>{
+        console.log(error)
+       })
 
     }
     const handleLogin = event =>{
